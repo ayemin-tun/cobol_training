@@ -33,6 +33,9 @@
            ACCEPT comp_val2.
            MOVE comp_val1 TO cal_value1.
            MOVE comp_val2 TO cal_value2.
+           COMPUTE result  = cal_value1 + cal_value2.
+           MOVE result TO format_display.
+           DISPLAY "Add Value: " format_display.
            PERFORM COMPARE_AND_SUBTRACT.
 
            DISPLAY "  ".
@@ -43,6 +46,9 @@
            ACCEPT comp3_val2.
            MOVE comp3_val1 TO cal_value1.
            MOVE comp3_val2 TO cal_value2.
+           COMPUTE result  = cal_value1 + cal_value2.
+           MOVE result TO format_display.
+           DISPLAY "Add Value: " format_display.
            PERFORM COMPARE_AND_SUBTRACT.
            
            STOP RUN.
