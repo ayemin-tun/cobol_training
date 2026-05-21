@@ -20,11 +20,10 @@
            DISPLAY "Current Date and Time: " ws_date.
            DISPLAY " ".
            
-           *> ၁။ YYYYMMDD ကို COBOL Integer (ရက်ပေါင်း) အဖြစ် အရင်ပြောင်းရမည်
+           
            MOVE FUNCTION INTEGER-OF-DATE(ws_ymd_date) TO ws_integer_days.
            DISPLAY "COBOL Integer Days   : " ws_integer_days.
-           
-           *> ၂။ ရလာတဲ့ Integer (ရက်ပေါင်း) ကိုမှ DATE-OF-INTEGER ထဲ ပြန်ထည့်ရမည်
+       
            MOVE FUNCTION DATE-OF-INTEGER(ws_integer_days) 
                TO ws_formatted_date.
                
