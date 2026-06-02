@@ -1,0 +1,44 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. Sort_statement.
+       AUTHOR. Aye Min Tun.
+       DATE-WRITTEN. 2026-06-02.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT CUSTOMER-IN ASSIGN TO 'customerIn.txt'
+           ORGANIZATION IS LINE SEQUENTIAL.
+           SELECT SORT-FILE ASSIGN TO 'workfile.txt'.
+           SELECT CUSTOMER-OUT ASSIGN TO 'customerout.txt'
+           ORGANIZATION IS LINE SEQUENTIAL.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD CUSTOMER-IN.
+       01 CUSTOMER-RECORD.
+           05 CUSTOMER-ID PIC 9(4).
+           05 CUSTOMER-NAME PIC X(20).
+           05 CUSTOMER-AGE PIC 9(2).
+        
+       SD SORT-FILE.
+       01 SORT-FILE-REC.
+           05 WS-CUSTOMER-ID PIC 9(4).
+           05 FILLER PIC X(22).
+       
+       FD CUSTOMER-OUT.
+       01 CUSTOMER-OUT-REC.
+           05 CUSTOMER-ID-OUT PIC 9(4).
+           05 CUSTOMER-NAME-OUT PIC X(20).
+           05 CUSTOMER-AGE-OUT PIC 9(2).
+
+       WORKING-STORAGE SECTION.
+       
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+       000-SORT-STATEMENT.
+           SORT SORT-FILE ON ASCENDING KEY WS-CUSTOMER-ID 
+           USING CUSTOMER-IN GIVING CUSTOMER-OUT.
+       END-SORT.
+           STOP RUN.
+       END PROGRAM Sort_statement.
+        
