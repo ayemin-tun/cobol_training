@@ -4,7 +4,7 @@ This repository contains my practical codebase, programming exercises, and struc
 
 ## 🚀 Overview
 
-The main objective of this repository is to store and demonstrate functional logic, sequential file manipulation, and data structuring utilizing:
+The main objective of this repository is to store and demonstrate functional logic, sequential file manipulation, data structuring utilizing and other core function :
 * **COBOL** (Common Business-Oriented Language)
 
 ## 🛠️ Tech Stack & Environment
